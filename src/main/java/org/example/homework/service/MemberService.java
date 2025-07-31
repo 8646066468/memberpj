@@ -60,7 +60,7 @@ public class MemberService {
     }
 
     @Transactional
-    public void deleteMember(long id) {M
+    public void deleteMember(long id) {
          memberRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("그런 사람 없어요잉"));
         memberRepository.deleteById(id);
