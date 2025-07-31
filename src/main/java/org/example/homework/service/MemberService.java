@@ -25,7 +25,7 @@ public class MemberService {
         return new MemberResponse(savedmember.getId(), savedmember.getName());
     }
 
-    // 조화
+    //단건 조화
     @Transactional(readOnly = true)
     public MemberResponse getMember(long id) {
         Member member = memberRepository.findById(id).orElseThrow(
