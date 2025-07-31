@@ -20,9 +20,4 @@ public class Member {
     public Member(String name) {
         this.name = name;
     }
-
-    public void updateName(String name) {
-        this.name = name;
-    }
-
 }
