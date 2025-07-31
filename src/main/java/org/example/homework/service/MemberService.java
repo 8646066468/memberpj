@@ -48,4 +48,21 @@ public class MemberService {
         }
         return doList;
     }
+
+    //단건 업데이트
+    @Transactional
+    public MemberResponse updateMember(Long id, MemberRequest memberRequest) {
+        Member member = memberRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("그런 사람 없어요잉"));
+        member.updateName(memberRequest.getName());
+
+        return new MemberResponse(member.getId(), member.getName());
+    }
+
+    @Transactional
+    public void deleteMember(long id) {M
+         memberRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("그런 사람 없어요잉"));
+        memberRepository.deleteById(id);
+    }
 }
